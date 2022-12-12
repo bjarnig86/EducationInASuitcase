@@ -18,3 +18,4 @@ engine = create_engine("postgresql+psycopg2://localhost:5432/smileylibs?user=pos
 Base.metadata.create_all(engine, checkfirst=True)
 
 session = Session(bind=engine, autoflush=False)
+
