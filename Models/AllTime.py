@@ -9,18 +9,18 @@ class AllTime(Base):
 
     id                      = Column(Integer, primary_key=True)
     name                    = Column(String(255), nullable=False)
-    total_mill_smileys      = Column(Integer) 
-    no_mill_smiley_earned   = Column(Integer)
-    active                  = Column(Integer)     
-    issued_qr               = Column(Integer)
-    sold_tablets            = Column(Integer)
-    no_accounts             = Column(Integer)
-    no_delivered_tablets    = Column(Integer)    
-    no1m_acc_rate           = Column(Float)
-    sold_delivered_rate     = Column(Float)    
-    avail_tablets           = Column(Integer)
-    unused_accounts         = Column(Integer)
-    no_kcse_complete        = Column(Integer)
+    total_mill_smileys      = Column(Integer, nullable=False, default=0) 
+    no_mill_smiley_earned   = Column(Integer, nullable=False, default=0)
+    active                  = Column(Integer, nullable=False, default=0)     
+    issued_qr               = Column(Integer, nullable=False, default=0)
+    sold_tablets            = Column(Integer, nullable=False, default=0)
+    no_accounts             = Column(Integer, nullable=False, default=0)
+    no_delivered_tablets    = Column(Integer, nullable=False, default=0)    
+    no1m_acc_rate           = Column(Float, nullable=False, default=0)
+    sold_delivered_rate     = Column(Float, nullable=False, default=0)    
+    avail_tablets           = Column(Integer, nullable=False, default=0)
+    unused_accounts         = Column(Integer, nullable=False, default=0)
+    no_kcse_complete        = Column(Integer, nullable=False, default=0)
     ForeignKeyConstraint(["name"], ["library.name"])
 
     def __init__(self, data) -> None:
@@ -38,10 +38,4 @@ class AllTime(Base):
         self.unused_accounts = data["unused_accounts"]
         self.no_kcse_complete = data["no_kcse_complete"]
     
-    def __eq__(self, other: list) -> bool:
-        listi = list(self)
-        for item, i in enumerate(self):
-            print(i)
-
-        return super(AllTime, ).__eq__(__o)
 
