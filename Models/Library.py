@@ -12,3 +12,7 @@ class Library(Base):
     lat     = Column(String(255))
     long    = Column(String(255))
 
+    def __init__(self, data) -> None:
+        self.name = data["name"]
+        self.lat = data["lat"]
+        self.long = data["long"]

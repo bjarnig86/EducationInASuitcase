@@ -51,17 +51,17 @@ def main():
         # Iterate throgh header column and parse data to dict
         # with indexing
         for j in range(len(indexes)):
-            rowDict[COLUMN_META[indexes[j]]] = row[j]
+            rowDict[COLUMN_META[indexes[j]]] = row[j] if row[j] != "<NA>" else None
         
         currentParsed.append(rowDict)
 
-    printAsJson(currentParsed)
+    return currentParsed
 
 if __name__ == "__main__":
     main()
 
 # TODO:
-# Get "PREV" from database (SELECT * FROM alltime;)
+# Get "PREV" from database (SELECCT * FROM alltime;)
 # Iterate and compare curr with prev.
 #     If difference in row, update HistoryData with some math
 #     Finally replace prev with curr.

@@ -10,7 +10,7 @@ class AllTime(Base):
     id                      = Column(Integer, primary_key=True)
     name                    = Column(String(255), nullable=False)
     total_mill_smileys      = Column(Integer) 
-    mill_smiley_earned      = Column(Integer)
+    no_mill_smiley_earned   = Column(Integer)
     active                  = Column(Integer)     
     issued_qr               = Column(Integer)
     sold_tablets            = Column(Integer)
@@ -22,3 +22,26 @@ class AllTime(Base):
     unused_accounts         = Column(Integer)
     no_kcse_complete        = Column(Integer)
     ForeignKeyConstraint(["name"], ["library.name"])
+
+    def __init__(self, data) -> None:
+        self.name = data["name"]
+        self.total_mill_smileys = data["total_mill_smileys"]
+        self.no_mill_smiley_earned = data["no_mill_smiley_earned"]
+        self.active = data["active"]
+        self.issued_qr = data["issued_qr"]
+        self.sold_tablets = data["sold_tablets"]
+        self.no_accounts = data["no_accounts"]
+        self.no_delivered_tablets = data["no_delivered_tablets"]
+        self.no1m_acc_rate = data["no1m_acc_rate"]
+        self.sold_delivered_rate = data["sold_delivered_rate"]
+        self.avail_tablets = data["avail_tablets"]
+        self.unused_accounts = data["unused_accounts"]
+        self.no_kcse_complete = data["no_kcse_complete"]
+    
+    def __eq__(self, other: list) -> bool:
+        listi = list(self)
+        for item, i in enumerate(self):
+            print(i)
+
+        return super(AllTime, ).__eq__(__o)
+
