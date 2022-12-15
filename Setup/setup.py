@@ -469,7 +469,7 @@ def main():
                 rowDict[COLUMN_META[indexes[j]][0]] = row[j] if row[j] not in SPECIAL_CASE else 0
         currentParsed.append(rowDict)
 
-    return TEMP_DATA
+    return currentParsed
 
 if __name__ == "__main__":
     main()
