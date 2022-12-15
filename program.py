@@ -17,7 +17,7 @@ from Setup.setup import main as getData
 
 # initialize connection to database
 engine = create_engine("postgresql+psycopg2://localhost:5432/smileylibs?user=postgres&password=12345")
-Base.metadata.create_all(engine, checkfirst=True)
+Base.metadata.create_all(engine)
 session = Session(bind=engine, autoflush=False)
 
 # Fetching new and old data
@@ -26,7 +26,7 @@ stmt = select(AllTime)
 prev = session.execute(stmt).all()
 
 ## Check if there is any difference between current data and previous data.
-historical = []
+historical_changes = False
 for i in range(len(curr)):
     changes_in_row = {"name": curr[i]["name"]}
     for key in curr[i].keys():
@@ -36,24 +36,23 @@ for i in range(len(curr)):
             changes_in_row[key] = curr[i][key] - getattr(prev[i][0], key)
             
     if len(changes_in_row) > 1:
+        historical_changes = True
         new_row = History(changes_in_row)
         session.add(new_row)
+
+if historical_changes:
+    AllTime.__table__.drop(engine)
+    Base.metadata.create_all(engine)
+
+    alles = []
+    for b in getData():
+        item = AllTime(b)
+        alles.append(item)
+
+    stmt = select(AllTime)
+    if not session.execute(stmt).first():
+        session.add_all(alles)
 
 session.commit()
     
 
-# print(json.dumps(changes, indent=4, ensure_ascii=False))
-# print(json.dumps(curr, indent=4, ensure_ascii=False))
-
-# AllTime.__table__.drop(engine)
-
-# alles = []
-
-# for b in getData():
-#     item = AllTime(b)
-#     alles.append(item)
-
-# stmt = select(AllTime)
-# if not session.execute(stmt).first():
-#     session.add_all(alles)
-#     session.commit()
