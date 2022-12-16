@@ -1,12 +1,5 @@
-from datetime import datetime
-import json
-import logging
-from sqlalchemy import create_engine, select, func, update, text
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import Session
-from sqlalchemy.engine import URL
-from sqlalchemy.exc import DatabaseError
-from timeit import default_timer as timer
-
 
 from Models.Base import Base
 from Models.Library import Library
@@ -14,7 +7,6 @@ from Models.AllTime import AllTime
 from Models.Library import Library
 from Setup.constants import LIBRARIES
 from Setup.setup import main as getData
-from progress_bar import progress_bar
 
 '''
 Only for initializing database for API
