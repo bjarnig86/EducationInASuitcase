@@ -24,4 +24,4 @@ Verkefninu er skipt upp í tvo hluta, annars vegar sá hluti sem uppfærir gagna
 
 Þessi hluti verkefnisins ser sá sem er sýnilegur öllum á slóðinni [https://mu8j82.deta.dev/docs](https://mu8j82.deta.dev/docs). Þessi hluti gerir notanda kleift að sækja þau bókasafnsgögn sem honum sýnist og fá þau í hendurnar á JSON formi sem er mjög vinsælt gagnaform fyrir vefsíður. Notanda gefst valkostur á að sækja öll bókasöfn, eitt tiltækt bókasafn, saga allra bókasafna eða saga tiltekinna bókasafna. SmileyCoin Library APi er hýst á þjónustu sem heitir Deta.
 
-\*\*ATH: Til að verkefnið virki á sem bestan hátt þarf sá server sem hýsir SmileyCoin Library API að keyra crontab á skrá sem heitir `program.py`. Í okkar tilfelli, þar sem um var að ræða fría hýsingarlausn, var ekki hægt að gera slíkt. (Deta býður ekki upp á það). Þetta er mikilvægur partur af verkefninu en þar sem um er að ræða skólaverkefni er ekki til fjármagn til að hýsa server til að sjá um það að keyra `program.py` 24/7.
+\*\*ATH cron job sem keyrir á hverjum degi gæti klikkað sökum þess að um fría hýsingarþjónustu er að ræða og má taka því með fyrirvara.
