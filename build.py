@@ -5,10 +5,6 @@ from os import getenv
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, select, func, update, text
 from sqlalchemy.orm import Session
-from sqlalchemy.engine import URL
-from sqlalchemy.exc import DatabaseError
-from timeit import default_timer as timer
-
 
 from Models.Base import Base
 from Models.Library import Library

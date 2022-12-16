@@ -1,28 +1,26 @@
-from typing import Union
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 
-from sqlalchemy import create_engine, select, join, outerjoin, text
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import Session
 from os import getenv
 from dotenv import load_dotenv
 
-from Models.Library import Library
-from Models.AllTime import AllTime
-from Models.History import History
 from Models.Base import Base
-
-NATURAL = "NATURAL JOIN library"
 
 '''
 -- Libraries (AllTime) --
+C   X
 R   GET /libraries/{id}
+U   X
+D   X
 L   GET /libraries --PARAMS
 
 -- History --
+C   X
 R   GET /library/history/{lib_id}
-U   UPDATE /library/history/{lib_id}
-D   DELETE /library/history/{lib_id}
+U   X
+D   X
 L   GET /libraries/history --PARAMS
 '''
 
@@ -41,30 +39,25 @@ def home():
 # -- Library routes --
 @app.get("/libraries")
 def list_libraries():
-    stmt = text("SELECT * FROM alltime NATURAL JOIN library;")
+    stmt = text("SELECT * FROM alltime full outer join library on alltime.name = library.short_name;")
     res = engine.execute(stmt).all()
     return res
 
 @app.get("/libraries/{lib_name}")
 def read_library(lib_name):
-    stmt = text("SELECT * FROM alltime WHERE name = :s NATURAL JOIN library")
-    # stmt = select(AllTime).where(AllTime.name == lib_name).join()
-    res = engine.execute(stmt, s=lib_name).fetchall()
+    stmt = text("SELECT * FROM alltime full outer JOIN library on alltime.name = library.short_name WHERE alltime.name = :name")
+    res = engine.execute(stmt, name=lib_name).first()
     return res
 
 # -- History routes --
-@app.get('/libraries/history/{lib_id}')
-def read_library_history():
-    pass
-
-@app.patch('/libraries/history/{lib_id}')
-def update_library_history():
-    pass
-
-@app.delete('/libraries/history/{lib_id}')
-def delete_library_history():
-    pass
-
-@app.get('/libraries/history')
+@app.get('/history')
 def list_library_history():
-    pass
+    stmt = text("SELECT * FROM history join library on history.name = library.short_name;")
+    res = engine.execute(stmt).all()
+    return res
+
+@app.get('/history/{lib_name}')
+def read_library_history(lib_name):
+    stmt = text("SELECT * FROM history JOIN library on history.name = library.short_name WHERE history.name = :name")
+    res = engine.execute(stmt, name=lib_name).first()
+    return res
