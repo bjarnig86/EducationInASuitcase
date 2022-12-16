@@ -1,5 +1,13 @@
 LIBRARIES = [
     {
+        "short_name": "ABCBurkina",
+        "long_name": "ABCBurkina",
+        "lat": None,
+        "long": None,
+        "start":  None,
+        "libstart": None
+    },
+    {
         "short_name": "BilalLib",
         "long_name": "Bilalul Habeshi Center",
         "lat": "8.986052"  ,
@@ -8,7 +16,7 @@ LIBRARIES = [
         "libstart":  "2022-07-14"
     },
     {
-        "short_name": "BillianSoH",
+        "short_name": "BillianSoM",
         "long_name": "Billian School of Hope Library",
         "lat": "-1.265855" ,
         "long": "36.854489" ,
@@ -127,14 +135,14 @@ LIBRARIES = [
         "start":  "2022-01-07",
         "libstart":  "2022-01-07"
     },
-    {
-        "short_name": "NaivashaMSP",
-        "long_name": "Naivasha Maximum Security Prison",
-        "lat": "-0.701527" ,
-        "long": "36.446198" ,
-        "start":  "2022-06-06",
-        "libstart":  None
-    },
+    # {
+    #     "short_name": "NaivashaMSP",
+    #     "long_name": "Naivasha Maximum Security Prison",
+    #     "lat": "-0.701527" ,
+    #     "long": "36.446198" ,
+    #     "start":  "2022-06-06",
+    #     "libstart":  None
+    # },
     {
         "short_name": "RukiiraLib",
         "long_name": "Rukiira Library",
@@ -143,14 +151,14 @@ LIBRARIES = [
         "start":  "2021-07-22",
         "libstart":  "2021-07-22"
     },
-    {
-        "short_name": "Takawiri",
-        "long_name": "Takawiri Primary School",
-        "lat": "-0.4801209",
-        "long": "34.084144" ,
-        "start":  "2016-06-09",
-        "libstart":  None
-    },
+    # {
+    #     "short_name": "Takawiri",
+    #     "long_name": "Takawiri Primary School",
+    #     "lat": "-0.4801209",
+    #     "long": "34.084144" ,
+    #     "start":  "2016-06-09",
+    #     "libstart":  None
+    # },
     {
         "short_name": "SilverSpSoH",
         "long_name": "Silver Spring School of Hope",
@@ -176,7 +184,7 @@ LIBRARIES = [
         "libstart":  "2022-06-28"
     },
     {
-        "short_name": "Takk",
+        "short_name": "TakkOyugis",
         "long_name": "Takk Orphanage Oyugis",
         "lat": "-0.4941734",
         "long": "34.747888" ,
@@ -198,5 +206,29 @@ LIBRARIES = [
         "long": "40.315318" ,
         "start":  "2022-03-04",
         "libstart":  "2022-03-04"
-    }
+    },
+    {
+        "short_name": "TaniaCentre",
+        "long_name": "TaniaCentre",
+        "lat": None,
+        "long": None,
+        "start":  None,
+        "libstart": None
+    },
+    {
+        "short_name": "Kibirichia",
+        "long_name": "Kibirichia",
+        "lat": None,
+        "long": None,
+        "start":  None,
+        "libstart": None
+    },
+        {
+        "short_name": "NLAFnakuru",
+        "long_name": "NLAFnakuru",
+        "lat": None,
+        "long": None,
+        "start":  None,
+        "libstart": None
+    },
 ]
