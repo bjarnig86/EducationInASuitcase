@@ -10,7 +10,7 @@ class Library(Base):
     __tablename__ = "library"
 
     id          = Column(Integer, primary_key=True, autoincrement=True) 
-    name        = Column(String(255), primary_key=True, unique=True)
+    short_name  = Column(String(255), primary_key=True, unique=True)
     long_name   = Column(String(1000))
     lat         = Column(String(255))
     long        = Column(String(255))
@@ -21,7 +21,7 @@ class Library(Base):
     history     = relationship("History", back_populates="library")
 
     def __init__(self, data) -> None:
-        self.name = data['name']
+        self.short_name = data['short_name']
         self.long_name = data['long_name']
         self.lat = data['lat']
         self.long = data['long']

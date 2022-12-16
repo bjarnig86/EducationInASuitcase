@@ -1,6 +1,6 @@
 LIBRARIES = [
     {
-        "name": "ABCBurkina",
+        "short_name": "ABCBurkina",
         "long_name": "ABCBurkina",
         "lat": None,
         "long": None,
@@ -8,7 +8,7 @@ LIBRARIES = [
         "libstart": None
     },
     {
-        "name": "BilalLib",
+        "short_name": "BilalLib",
         "long_name": "Bilalul Habeshi Center",
         "lat": "8.986052"  ,
         "long": "38.737885" ,
@@ -16,7 +16,7 @@ LIBRARIES = [
         "libstart":  "2022-07-14"
     },
     {
-        "name": "BillianSoM",
+        "short_name": "BillianSoM",
         "long_name": "Billian School of Hope Library",
         "lat": "-1.265855" ,
         "long": "36.854489" ,
@@ -24,7 +24,7 @@ LIBRARIES = [
         "libstart":  "2020-12-21"
     },
     {
-        "name": "Chelezo",
+        "short_name": "Chelezo",
         "long_name": "Chelezo Secondary School",
         "lat": "-1.789920" ,
         "long": "37.619008" ,
@@ -32,7 +32,7 @@ LIBRARIES = [
         "libstart":  "2022-03-25"
     },
     {
-        "name": "Harvest",
+        "short_name": "Harvest",
         "long_name": "Harvest high school Kariobangi",
         "lat": "-1.249508" ,
         "long": "36.876653" ,
@@ -40,7 +40,7 @@ LIBRARIES = [
         "libstart":  "2022-02-17"
     },
     {
-        "name": "KakumaLib",
+        "short_name": "KakumaLib",
         "long_name": "Kakuma Community Library",
         "lat": " 3.753388" ,
         "long": "34.814822" ,
@@ -48,7 +48,7 @@ LIBRARIES = [
         "libstart":  "2022-03-17"
     },
     {
-        "name": "KCRCLib",
+        "short_name": "KCRCLib",
         "long_name": "Kithimu Community Library",
         "lat": "-0.540664" ,
         "long": "37.516956" ,
@@ -56,7 +56,7 @@ LIBRARIES = [
         "libstart":  "2021-11-21"
     },
     {
-        "name": "knlsBuruburu",
+        "short_name": "knlsBuruburu",
         "long_name": "knlsBuruburu",
         "lat": " 1.282451" ,
         "long": "36.879230" ,
@@ -64,7 +64,7 @@ LIBRARIES = [
         "libstart":  "2022-02-07"
     },
     {
-        "name": "knlsGarissa",
+        "short_name": "knlsGarissa",
         "long_name": "knls Garissa",
         "lat": "-0.452578" ,
         "long": "39.646333" ,
@@ -72,7 +72,7 @@ LIBRARIES = [
         "libstart":  "2022-03-07"
     },
     {
-        "name": "knlsKibera",
+        "short_name": "knlsKibera",
         "long_name": "knls Kibera Community Library",
         "lat": "-1.319175" ,
         "long": "36.779397" ,
@@ -80,7 +80,7 @@ LIBRARIES = [
         "libstart":  "2020-12-11"
     },
     {
-        "name": "knlsMeru",
+        "short_name": "knlsMeru",
         "long_name": "knls Meru",
         "lat": " 0.049072" ,
         "long": "37.648807" ,
@@ -88,7 +88,7 @@ LIBRARIES = [
         "libstart":  "2021-08-03"
     },
     {
-        "name": "knlsMoyale",
+        "short_name": "knlsMoyale",
         "long_name": "knls Moyale",
         "lat": " 3.519317" ,
         "long": "39.050968" ,
@@ -96,7 +96,7 @@ LIBRARIES = [
         "libstart":  "2021-04-08"
     },
     {
-        "name": "KongoniLib",
+        "short_name": "KongoniLib",
         "long_name": "Kongoni community library",
         "lat": " 0.781359" ,
         "long": "35.133205" ,
@@ -104,7 +104,7 @@ LIBRARIES = [
         "libstart":  "2020-12-09"
     },
     {
-        "name": "MadoyaSoH",
+        "short_name": "MadoyaSoH",
         "long_name": "Madoya School of Hope",
         "lat": "-1.259419" ,
         "long": "36.868792" ,
@@ -112,7 +112,7 @@ LIBRARIES = [
         "libstart":  "2021-06-23"
     },
     {
-        "name": "MajengoSoH",
+        "short_name": "MajengoSoH",
         "long_name": "Majengo School of Hope",
         "lat": "-1.285861" ,
         "long": "36.843673" ,
@@ -120,7 +120,7 @@ LIBRARIES = [
         "libstart":  "2021-06-11"
     },
     {
-        "name": "MashimoniSoH",
+        "short_name": "MashimoniSoH",
         "long_name": "Mashimoni School of Hope",
         "lat": "-1.261905" ,
         "long": "36.858842" ,
@@ -128,7 +128,7 @@ LIBRARIES = [
         "libstart":  "2021-02-18"
     },
     {
-        "name": "MathareMCE",
+        "short_name": "MathareMCE",
         "long_name": "Mathare Children Education",
         "lat": "-0.540664" ,
         "long": "37.516956" ,
@@ -136,7 +136,7 @@ LIBRARIES = [
         "libstart":  "2022-01-07"
     },
     # {
-    #     "name": "NaivashaMSP",
+    #     "short_name": "NaivashaMSP",
     #     "long_name": "Naivasha Maximum Security Prison",
     #     "lat": "-0.701527" ,
     #     "long": "36.446198" ,
@@ -144,7 +144,7 @@ LIBRARIES = [
     #     "libstart":  None
     # },
     {
-        "name": "RukiiraLib",
+        "short_name": "RukiiraLib",
         "long_name": "Rukiira Library",
         "lat": "-0.485782" ,
         "long": "37.537287" ,
@@ -152,7 +152,7 @@ LIBRARIES = [
         "libstart":  "2021-07-22"
     },
     # {
-    #     "name": "Takawiri",
+    #     "short_name": "Takawiri",
     #     "long_name": "Takawiri Primary School",
     #     "lat": "-0.4801209",
     #     "long": "34.084144" ,
@@ -160,7 +160,7 @@ LIBRARIES = [
     #     "libstart":  None
     # },
     {
-        "name": "SilverSpSoH",
+        "short_name": "SilverSpSoH",
         "long_name": "Silver Spring School of Hope",
         "lat": None,
         "long": None,
@@ -168,7 +168,7 @@ LIBRARIES = [
         "libstart":  "2022-07-29"
     },
     {
-        "name": "SOSBDar",
+        "short_name": "SOSBDar",
         "long_name": "SOS-Herman Childrens Village Bahir Dar",
         "lat": "11.608601" ,
         "long": "37.364813" ,
@@ -176,7 +176,7 @@ LIBRARIES = [
         "libstart":  "2022-07-07"
     },
     {
-        "name": "ShivangaLib",
+        "short_name": "ShivangaLib",
         "long_name": "Shivanga Secondary School",
         "lat": " 0.519339" ,
         "long": "34.861521" ,
@@ -184,7 +184,7 @@ LIBRARIES = [
         "libstart":  "2022-06-28"
     },
     {
-        "name": "TakkOyugis",
+        "short_name": "TakkOyugis",
         "long_name": "Takk Orphanage Oyugis",
         "lat": "-0.4941734",
         "long": "34.747888" ,
@@ -192,7 +192,7 @@ LIBRARIES = [
         "libstart":  "2022-03-10"
     },
     {
-        "name": "StJohnsShinoyi",
+        "short_name": "StJohnsShinoyi",
         "long_name": "St. John's Shinoyi Secondary School",
         "lat": " 0.3415314",
         "long": "34.666311" ,
@@ -200,7 +200,7 @@ LIBRARIES = [
         "libstart":  "2022-06-27"
     },
     {
-        "name": "YusraSecondary",
+        "short_name": "YusraSecondary",
         "long_name": "Yusra SecondarySchool",
         "lat": " 0.109417" ,
         "long": "40.315318" ,
@@ -208,7 +208,7 @@ LIBRARIES = [
         "libstart":  "2022-03-04"
     },
     {
-        "name": "TaniaCentre",
+        "short_name": "TaniaCentre",
         "long_name": "TaniaCentre",
         "lat": None,
         "long": None,
@@ -216,7 +216,7 @@ LIBRARIES = [
         "libstart": None
     },
     {
-        "name": "Kibirichia",
+        "short_name": "Kibirichia",
         "long_name": "Kibirichia",
         "lat": None,
         "long": None,
@@ -224,7 +224,7 @@ LIBRARIES = [
         "libstart": None
     },
         {
-        "name": "NLAFnakuru",
+        "short_name": "NLAFnakuru",
         "long_name": "NLAFnakuru",
         "lat": None,
         "long": None,

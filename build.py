@@ -37,6 +37,11 @@ def main():
     # Build database
     Base.metadata.create_all(engine, checkfirst=True)
 
+    library_data = []
+    for lib in LIBRARIES:
+        item = Library(lib)
+        library_data.append(item)
+    session.add_all(library_data)
 
     # Fetching data
     data = getData()
@@ -46,12 +51,6 @@ def main():
         item = AllTime(d)
         all_time_data.append(item)
     session.add_all(all_time_data)
-    
-    library_data = []
-    for lib in LIBRARIES:
-        item = Library(lib)
-        library_data.append(item)
-    session.add_all(library_data)
     
     session.commit() # insert into database
 

@@ -10,6 +10,8 @@ from Models.AllTime import AllTime
 from Models.History import History
 from Models.Base import Base
 
+NATURAL = "NATURAL JOIN library"
+
 '''
 -- Libraries (AllTime) --
 R   GET /libraries/{id}
@@ -36,13 +38,15 @@ def home():
 # -- Library routes --
 @app.get("/libraries")
 def list_libraries():
-    res = session.query(AllTime).join(Library, Library.name == AllTime.name)
-    # res = engine.execute(stmt).all()
+    stmt = text("SELECT * FROM alltime NATURAL JOIN library;")
+    res = engine.execute(stmt).all()
     return res
 
-@app.get("/libraries/{lib_id}")
-def read_library():
-    res = session.query(AllTime) # sem sækir úr AllTime eftir ID (og joinar Library)
+@app.get("/libraries/{lib_name}")
+def read_library(lib_name):
+    stmt = text("SELECT * FROM alltime WHERE name = :s NATURAL JOIN library")
+    # stmt = select(AllTime).where(AllTime.name == lib_name).join()
+    res = engine.execute(stmt, s=lib_name).fetchall()
     return res
 
 # -- History routes --
