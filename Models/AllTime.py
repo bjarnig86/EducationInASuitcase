@@ -21,7 +21,7 @@ class AllTime(Base):
     unused_accounts         = Column(Integer, nullable=False, default=0)
     no_kcse_complete        = Column(Integer, nullable=False, default=0)
 
-    name                    = Column(String(255), ForeignKey("library.short_name"), nullable=False)
+    name                    = Column(String(255), ForeignKey("library.name"), nullable=False)
     library                 = relationship("Library", back_populates="alltime")
 
     def __init__(self, data) -> None:

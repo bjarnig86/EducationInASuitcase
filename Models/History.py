@@ -22,7 +22,7 @@ class History(Base):
     no_kcse_complete        = Column(Integer, default=0)
     date_of_change          = Column(Date, default=datetime.now())
 
-    name                    = Column(String(255), ForeignKey("library.short_name"), nullable=False)
+    name                    = Column(String(255), ForeignKey("library.name"), nullable=False)
     library                 = relationship("Library", back_populates="history")
 
     def __init__(self, data) -> None:

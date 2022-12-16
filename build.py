@@ -1,7 +1,7 @@
 from datetime import datetime
 import json
 import logging
-from sqlalchemy import create_engine, select, func, update
+from sqlalchemy import create_engine, select, func, update, text
 from sqlalchemy.orm import Session
 from sqlalchemy.engine import URL
 from sqlalchemy.exc import DatabaseError
@@ -23,16 +23,20 @@ Only for initializing database for API
 def main():
     # initialize connection to database
     engine = create_engine("postgresql+psycopg2://localhost:5432/smileylibs?user=postgres&password=12345")
-    Base.metadata.create_all(engine, checkfirst=True)
     session = Session(bind=engine, autoflush=False)
 
     # Drop tables if exist
     try:
-        session.query(AllTime).delete()
-        session.query(Library).delete()
-        session.commit()
+        stmt = text("DROP TABLE IF EXISTS alltime, library CASCADE;")
+        # session.query(AllTime).delete()
+        # session.query(Library).delete()
+        engine.execute(stmt)
     except:
         session.rollback()
+
+    # Build database
+    Base.metadata.create_all(engine, checkfirst=True)
+
 
     # Fetching data
     data = getData()
