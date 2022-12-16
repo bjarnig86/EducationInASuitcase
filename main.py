@@ -36,8 +36,8 @@ def home():
 # -- Library routes --
 @app.get("/libraries")
 def list_libraries():
-    stmt = text("SELECT * FROM library NATURAL JOIN alltime;")
-    res = engine.execute(stmt).all()
+    res = session.query(AllTime).join(Library, Library.name == AllTime.name)
+    # res = engine.execute(stmt).all()
     return res
 
 @app.get("/libraries/{lib_id}")

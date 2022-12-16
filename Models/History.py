@@ -8,6 +8,7 @@ class History(Base):
     __tablename__ = "history"
 
     id                      = Column(Integer, primary_key=True)
+    name                    = Column(String(255), ForeignKey("library.name"), nullable=False)
     total_mill_smileys      = Column(Integer, default=0) 
     no_mill_smiley_earned   = Column(Integer, default=0)  
     active                  = Column(Integer, default=0)      
@@ -21,9 +22,10 @@ class History(Base):
     unused_accounts         = Column(Integer, default=0)
     no_kcse_complete        = Column(Integer, default=0)
     date_of_change          = Column(Date, default=datetime.now())
-
-    name                    = Column(String(255), ForeignKey("library.name"), nullable=False)
+    
     library                 = relationship("Library", back_populates="history")
+    ForeignKeyConstraint(["name"], ["library.name"])
+
 
     def __init__(self, data) -> None:
         for field in data:

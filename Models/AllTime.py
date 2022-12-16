@@ -8,6 +8,7 @@ class AllTime(Base):
     __tablename__ = "alltime"
 
     id                      = Column(Integer, primary_key=True)
+    name                    = Column(String(255), ForeignKey("library.name"), nullable=False)
     total_mill_smileys      = Column(Integer, nullable=False, default=0) 
     no_mill_smiley_earned   = Column(Integer, nullable=False, default=0)
     active                  = Column(Integer, nullable=False, default=0)     
@@ -21,8 +22,8 @@ class AllTime(Base):
     unused_accounts         = Column(Integer, nullable=False, default=0)
     no_kcse_complete        = Column(Integer, nullable=False, default=0)
 
-    name                    = Column(String(255), ForeignKey("library.name"), nullable=False)
     library                 = relationship("Library", back_populates="alltime")
+    ForeignKeyConstraint(["name"], ["library.name"])
 
     def __init__(self, data) -> None:
         self.name = data["name"]
