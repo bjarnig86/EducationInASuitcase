@@ -59,7 +59,11 @@ def cron():
             session.add_all(alles)
 
     session.commit()
+    return True
         
 
 if __name__ == "__main__":
-    cron()
+    try:
+        cron()
+    except RuntimeError:
+        print("Somthing when wrong with cron job")
