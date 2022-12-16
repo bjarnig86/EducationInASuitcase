@@ -10,7 +10,7 @@ Verkefninu er skipt upp í tvo hluta, annars vegar sá hluti sem uppfærir gagna
 
 ## Gagnagrunnsvirknin
 
-Í verkefninu er skrá sem heitir `program.py` sem hefur það verkefni að sækja gögn á slóðina [https://libraries.tutor-web.net/tables/alltime.1M.txt](https://libraries.tutor-web.net/tables/alltime.1M.txt) og umbreyta þessi gögn í gagnagrunns hæft form. `program.py` skráin er keyrð daglega og gögnin eru síðan vistuð í grunninn á eftirfarandi hátt.
+Í verkefninu er skrá sem heitir `program.py` sem hefur það verkefni að sækja gögn á slóðina [https://libraries.tutor-web.net/tables/alltime.1M.txt](https://libraries.tutor-web.net/tables/alltime.1M.txt) og umbreyta þessi gögn í gagnagrunns hæft form. `program.py` skráin skal vera keyrð daglega og gögnin eru síðan vistuð í grunninn á eftirfarandi hátt.
 
 ### Gagnagrunnurinn
 
@@ -22,4 +22,6 @@ Verkefninu er skipt upp í tvo hluta, annars vegar sá hluti sem uppfærir gagna
 
 ## SmileyCoin Library API
 
-Þessi hluti verkefnisins ser sá sem er sýnilegur öllum á slóðinni **BLA-BLE-BLU.COM**. Þessi hluti gerir notanda kleift að sækja þau bókasafnsgögn sem honum sýnist og fá þau í hendurnar á JSON formi sem er mjög vinsælt gagnaform fyrir vefsíður. Notanda gefst valkostur á að sækja öll bókasöfn, eitt tiltækt bókasafn, saga allra bókasafna eða saga tiltekinna bókasafna.
+Þessi hluti verkefnisins ser sá sem er sýnilegur öllum á slóðinni [https://mu8j82.deta.dev/docs](https://mu8j82.deta.dev/docs). Þessi hluti gerir notanda kleift að sækja þau bókasafnsgögn sem honum sýnist og fá þau í hendurnar á JSON formi sem er mjög vinsælt gagnaform fyrir vefsíður. Notanda gefst valkostur á að sækja öll bókasöfn, eitt tiltækt bókasafn, saga allra bókasafna eða saga tiltekinna bókasafna.
+
+ATH: Til að verkefnið virki á sem bestan hátt þarf sá server sem hýsir SmileyCoin Library API að keyra crontab á skrá sem heitir `program.py`. Í okkar tilfelli, þar sem um var að ræða fría hýsingarlausn, var ekki hægt að gera slíkt. (Deta býður ekki upp á það). Þetta er mikilvægur partur af verkefninu en þar sem um er að ræða skólaverkefni er ekki til fjármagn til að hýsa server til að sjá um það að keyra `program.py` 24/7.
