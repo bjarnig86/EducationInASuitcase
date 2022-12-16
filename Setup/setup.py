@@ -464,7 +464,7 @@ def main():
             if COLUMN_META[indexes[j]][1] == "int":
                 rowDict[COLUMN_META[indexes[j]][0]] = int(row[j]) if row[j] not in SPECIAL_CASE else 0
             elif COLUMN_META[indexes[j]][1] == "float":
-                rowDict[COLUMN_META[indexes[j]][0]] = row[j] if row[j] not in SPECIAL_CASE else 0
+                rowDict[COLUMN_META[indexes[j]][0]] = float(row[j]) if row[j] not in SPECIAL_CASE else 0
             else:
                 rowDict[COLUMN_META[indexes[j]][0]] = row[j] if row[j] not in SPECIAL_CASE else 0
         currentParsed.append(rowDict)
