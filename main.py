@@ -5,8 +5,7 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import Session
 from os import getenv
 from dotenv import load_dotenv
-from deta import App as CRON
-
+from deta import app as cron
 from Models.Base import Base
 from program import cron
 
@@ -86,7 +85,7 @@ def read_library_history(lib_name):
         return status.HTTP_500_INTERNAL_SERVER_ERROR
     return res
 
-@CRON.lib.cron()
+@cron.lib.cron()
 def cron_job(event):
     cron()
     return "Cron Execution Completed"
