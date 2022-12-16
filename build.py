@@ -9,6 +9,7 @@ from timeit import default_timer as timer
 
 
 from Models.Base import Base
+from Models.Library import Library
 from Models.AllTime import AllTime
 from Models.Library import Library
 from Setup.constants import LIBRARIES
@@ -24,6 +25,14 @@ def main():
     engine = create_engine("postgresql+psycopg2://localhost:5432/smileylibs?user=postgres&password=12345")
     Base.metadata.create_all(engine, checkfirst=True)
     session = Session(bind=engine, autoflush=False)
+
+    # Drop tables if exist
+    try:
+        session.query(AllTime).delete()
+        session.query(Library).delete()
+        session.commit()
+    except:
+        session.rollback()
 
     # Fetching data
     data = getData()

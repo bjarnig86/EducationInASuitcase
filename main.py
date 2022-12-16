@@ -4,10 +4,10 @@ from fastapi import FastAPI
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import Session
 
-from Models.AllTime import AllTime
-from Models.Base import Base
-from Models.History import History
 from Models.Library import Library
+from Models.AllTime import AllTime
+from Models.History import History
+from Models.Base import Base
 
 app = FastAPI()
 
@@ -21,6 +21,5 @@ def home():
 
 @app.get("/libraries")
 def get_libraries():
-    stmt = select(AllTime)
-    res = engine.execute(stmt).all()
+    res = session.query(AllTime).join(Library.short_name == AllTime.name, full=True)
     return res
