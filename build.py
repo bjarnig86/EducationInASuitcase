@@ -1,6 +1,8 @@
 from datetime import datetime
 import json
 import logging
+from os import getenv
+from dotenv import load_dotenv
 from sqlalchemy import create_engine, select, func, update, text
 from sqlalchemy.orm import Session
 from sqlalchemy.engine import URL
@@ -14,15 +16,15 @@ from Models.AllTime import AllTime
 from Models.Library import Library
 from Setup.constants import LIBRARIES
 from Setup.setup import main as getData
-from progress_bar import progress_bar
 
 '''
 Only for initializing database for API
 '''
 
 def main():
+    load_dotenv()
     # initialize connection to database
-    engine = create_engine("postgresql+psycopg2://localhost:5432/smileylibs?user=postgres&password=12345")
+    engine = create_engine(getenv("DB"))
     session = Session(bind=engine, autoflush=False)
 
     # Drop tables if exist

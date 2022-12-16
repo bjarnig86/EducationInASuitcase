@@ -4,6 +4,8 @@ from fastapi.responses import RedirectResponse
 
 from sqlalchemy import create_engine, select, join, outerjoin, text
 from sqlalchemy.orm import Session
+from os import getenv
+from dotenv import load_dotenv
 
 from Models.Library import Library
 from Models.AllTime import AllTime
@@ -26,7 +28,8 @@ L   GET /libraries/history --PARAMS
 
 app = FastAPI()
 
-engine = create_engine("postgresql+psycopg2://localhost:5432/smileylibs?user=postgres&password=12345")
+load_dotenv()
+engine = create_engine(getenv("DB"))
 Base.metadata.create_all(engine)
 session = Session(bind=engine, autoflush=False)
 
