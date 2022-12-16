@@ -5,10 +5,12 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import Session
 from os import getenv
 from dotenv import load_dotenv
-from deta import app as deta_app
+from deta import App as CRON
 
 from Models.Base import Base
 from program import cron
+
+
 
 '''
 -- Libraries (AllTime) --
@@ -84,7 +86,8 @@ def read_library_history(lib_name):
         return status.HTTP_500_INTERNAL_SERVER_ERROR
     return res
 
-@deta_app.lib.cron()
-def update_data(event):
+@CRON.lib.cron()
+def cron_job(event):
     cron()
+    return "Cron Execution Completed"
 
