@@ -28,8 +28,8 @@ D   X
 L   GET /libraries/history --PARAMS
 '''
 
-app = App(FastAPI())
-# app = FastAPI()
+# app = App(FastAPI())
+app = FastAPI()
 
 
 load_dotenv()
@@ -96,7 +96,7 @@ def read_library_history(lib_name):
 #     cron()
 #     return "Cron Execution Completed 2.0"
 
-@app.lib.cron()
-def cron_job(event):
-    cron()
-    return "Cron Execution Completed"
+# @app.lib.cron()
+# def cron_job(event):
+#     cron()
+#     return "Cron Execution Completed"
