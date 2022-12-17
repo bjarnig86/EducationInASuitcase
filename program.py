@@ -59,6 +59,7 @@ def cron():
             session.add_all(alles)
 
     session.commit()
+    session.close()
     return True
         
 
