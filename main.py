@@ -28,7 +28,9 @@ D   X
 L   GET /libraries/history --PARAMS
 '''
 
-app = App(FastAPI())
+# app = App(FastAPI())
+app = FastAPI()
+
 
 load_dotenv()
 engine = create_engine(getenv("DB"))
@@ -91,8 +93,8 @@ def cron_cron(event):
     cron()
     return "Cron Execution Completed 2.0"
 
-@app.lib.cron()
-def cron_job(event):
-    cron()
-    return "Cron Execution Completed"
+# @app.lib.cron()
+# def cron_job(event):
+#     cron()
+#     return "Cron Execution Completed"
 
