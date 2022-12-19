@@ -6,7 +6,6 @@ from sqlalchemy.orm import Session
 from os import getenv
 from dotenv import load_dotenv
 from deta import App
-from deta import app
 from Models.Base import Base
 from program import cron
 
@@ -29,8 +28,6 @@ L   GET /libraries/history --PARAMS
 '''
 
 app = App(FastAPI())
-# app = FastAPI()
-
 
 load_dotenv()
 engine = create_engine(getenv("DB"))
@@ -106,7 +103,7 @@ def manual_cron_job():
 #     cron()
 #     return "Cron Execution Completed 2.0"
 
-# @app.lib.cron()
-# def cron_job(event):
-#     cron()
-#     return "Cron Execution Completed"
+@app.lib.cron()
+def cron_job(event = None):
+    cron()
+    return "Cron Execution Completed"
