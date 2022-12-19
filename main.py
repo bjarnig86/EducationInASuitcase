@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from os import getenv
 from dotenv import load_dotenv
 from deta import App
-# from deta import app
+from deta import app
 from Models.Base import Base
 from program import cron
 
@@ -28,8 +28,8 @@ D   X
 L   GET /libraries/history --PARAMS
 '''
 
-# app = App(FastAPI())
-app = FastAPI()
+app = App(FastAPI())
+# app = FastAPI()
 
 
 load_dotenv()
@@ -90,6 +90,16 @@ def read_library_history(lib_name):
         except:
             return status.HTTP_500_INTERNAL_SERVER_ERROR
         return res
+
+
+@app.get('/manual-cron')
+def manual_cron_job():
+    with Session(bind=engine, autoflush=False):
+        try:
+            cron()
+        except:
+            return {"message": "Manual Cron Job failed!"}
+    return {"message": "Manual Cron Job SUCCESSFUL"}
 
 # @app.lib.cron()
 # def cron_cron(event):
